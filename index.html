@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mukesh Revanth | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f0f1c, #4aa0c5);
+      background-attachment: fixed;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .highlight {
+     background: linear-gradient(to right, #00f2fe, #4facfe);
+     -webkit-background-clip: text;
+     background-clip: text; 
+     -webkit-text-fill-color: transparent;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    main {
+      flex: 1;
+    }
+    .img-wrapper {
+      max-width: 360px;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 30px rgba(138, 43, 226, 0.4)); 
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .img-wrapper:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 50px rgba(186, 85, 211, 0.6));
+    }
+    .blob-img {
+      width: 100%;
+      clip-path: url(#blobPath);
+      -webkit-clip-path: url(#blobPath);
+      object-fit: cover;
+      display: block;
+    }
+    footer {
+      background-color: #0f0f1c;
+      color: #ffffff;
+      padding: 1rem 0;
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+    .softskills-box {
+      background: linear-gradient(to right, #222, #333);
+      border: 2px solid transparent;
+      border-radius: 10px;
+      border-image: linear-gradient(to right, #149a57, #4facfe);
+      border-image-slice: 1;
+      padding: 1rem;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      color: white;
+      box-shadow: 0 0 10px rgba(119, 204, 217, 0.3);
+      font-size: 14px;
+      width: 100%;
+      overflow-x: hidden;
+      word-break: break-word;
+      line-height: 1.6;
+    }
+    .skills-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 1rem 0;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .skills-container::-webkit-scrollbar {
+      display: none;
+    }
+    .skills-container .skill {
+      display: inline-block;
+      margin: 0 20px;
+      text-align: center;
+    }
+    .skills-container img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+    .skills-container img:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 10px aqua);
+    }
+    .timeline {
+      border-left: 4px solid #00ffff;
+      padding-left: 20px;
+    }
+    .timeline h5 {
+      color: #00ffff;
+    }
+   .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+      border: 1px solid rgba(186, 85, 211, 0.5); /* light violet glow */
+      box-shadow: 0 0 25px rgba(186, 85, 211, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+    <img src="logo.png" alt="Logo" style="height: 100px; width: auto; " class="me-2">
+    </a>
+    
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section id="home" class="min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1>Hello, I'm <span class="highlight">Mukesh Revanth</span></h1>
+        <h3 class="highlight">Software Developer | Full Stack Developer | Data Analytics with Tableu </h3>
+        <p>Full-stack SDE blending logic and insight — I build scalable web solutions and craft impactful Tableu dashboards that transform data into decisions.</p>
+        <a href="Resume.pdf" class="btn btn-info mt-3" download>Download Resume</a>
+      </div>
+      <div class="col-md-6">
+        <div class="softskills-box">
+const coder = {
+  name: 'Mukesh Revanth',
+  skills: ['HTML', 'CSS', 'JavaScript', 'MySQL' , 'Python' , 'Java'],
+  hardWorker: true,
+  quickLearner: true,
+  problemSolver: true,
+  hireable: function() {
+    return (
+      this.hardWorker &&
+      this.problemSolver &&
+      this.skills.length >= 7
+    );
+  }
+};
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="highlight">About Me</h2>
+        <p>I’m Mukesh Revanth, a Computer Science engineering student specialized in AI & ML, driven by a passion for building innovative and impactful software solutions. From developing interactive web applications to designing intelligent systems and data-driven dashboards, I thrive on transforming ideas into meaningful digital experiences. With strong interests in Software Development, AI, and Data Analytics, I aim to create technology that is not just functional, but purposeful.</p>
+      </div>
+      <div class="img-wrapper">
+       <img src="MukeshRevanth.jpg" alt="Mukesh Revanth" class="blob-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="text-center highlight mb-4">Technical Skills</h2>
+    <div class="skills-container">
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><p>HTML</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><p>CSS</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"><p>Bootstrap</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><p>JavaScript</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><p>Java</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><p>Python</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><p>MongoDB</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><p>Figma</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><p>MySQL</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-5">
+  <div class="container">
+    <h2 class="text-center highlight mb-4">Experience</h2>
+    <div class="timeline">
+      <h5>Web Development and Design - ExcelR</h5>
+      <p><strong>Duration:</strong> July 15 – Aug 15, 2025<br><strong>Role:</strong> Created responsive web applications using HTML, CSS, and Bootstrap.</p>
+
+      <h5>Data Analyst using Tableu </h5>
+      <p><strong>Duration:</strong> 15 Days<br><strong>Role:</strong> “Visualized and analyzed economic freedom trends using Tableau to provide actionable insights on prosperity.</p>
+
+      <h5>Python Programming – GeekForGeeks</h5>
+      <p><strong>Duration:</strong> Aug 2024 – Sep 2024<br><strong>Role:</strong> Developed GUI tools using Python including Calculator, and Password Generator.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="py-5">
+  <div class="container">
+    <h2 class="text-center highlight mb-4">Education</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="p-3 bg-dark text-white rounded">
+          <h5 class="highlight">B-Tech CSE-AI & ML</h5>
+          <p>RISE Krishna Sai Prakasam Group Of Institutions<br>CGPA: 7.29 (2022–2026)</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 bg-dark text-white rounded">
+          <h5 class="highlight">Board of Intermediate Education</h5>
+          <p>Sri Gayatri Junior College (2020 - 2022) <br>Percentage: 82.8%</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 bg-dark text-white rounded">
+          <h5 class="highlight"> SSC </S></h5>
+          <p>Nagarjuna vidyalaya high school , 2020<br>Percentage: 94.8%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" style="padding: 4rem 2rem;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;" class="text-center highlight mb-4">Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Responsive Portfolio Builder</h3>
+      <p>Created a Portfolio using  HTML & CSS  with full responsiveness.</p>
+    </div>
+     <div class="project-card">
+      <h3>Measuring-The-Pulse-Of-Prosperity-An-Index-Of-Economic-Freedom-Analysis Dashboard</h3>
+      <p>“Visualized and analyzed economic freedom trends using Tableau to provide actionable insights on prosperity.”.</p>
+    </div>
+    <div class="project-card">
+      <h3>Python GUI Calculator</h3>
+      <p>Designed a sleek digital calculator using Python and Tkinter.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center highlight mb-4">Let's Connect!</h2>
+    <p class="text-center mb-4">Interested in building something impactful together? Let’s get in touch.</p>
+    <form action="https://formspree.io/f/mrbldkzk" method="POST" class="row g-3">
+      <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+      <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+      <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea></div>
+      <div class="col-12 text-center"><button type="submit" class="btn btn-info">Send Message</button></div>
+    </form>
+    <div class="text-center mt-4">
+      <a href="mailto:mukeshrevanth94@gmail.com" class="text-white me-3" title="Email Me">
+     <i class="fas fa-envelope"></i>
+     </a>
+
+      <a href="https://github.com/Revanth-4233" target="_blank" class="text-white me-3"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/mukesh-revanth-3529b329a/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <p class="mb-0">&copy; Mukesh Revanth.  All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<svg width="0" height="0">
+  <defs>
+    <clipPath id="blobPath" clipPathUnits="objectBoundingBox">
+      <path d="M0.87,0.61 C0.91,0.73,0.87,0.9,0.74,0.95 C0.61,1,0.39,1,0.27,0.93 C0.15,0.85,0.06,0.68,0.04,0.49 C0.02,0.3,0.1,0.09,0.24,0.03 C0.38,-0.02,0.64,0.03,0.75,0.13 C0.86,0.23,0.84,0.48,0.87,0.61 Z" />
+    </clipPath>
+  </defs>
+</svg>
+<script>
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', async function(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(form);
+  const status = document.createElement("p");
+  
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if (response.ok) {
+      status.textContent = "✅ Thanks! Your message has been sent.";
+      status.style.color = "lightgreen";
+      form.appendChild(status);
+      form.reset();
+    } else {
+      status.textContent = "❌ Oops! There was a problem sending your message.";
+      status.style.color = "red";
+      form.appendChild(status);
+    }
+  } catch (error) {
+    status.textContent = "❌ Network error. Please try again later.";
+    status.style.color = "red";
+    form.appendChild(status);
+  }
+});
+</script>
+
+</body>
+</html>
